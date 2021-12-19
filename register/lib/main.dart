@@ -4,10 +4,6 @@ void main() => runApp(MaterialApp(
       home: Home(),
     ));
 
-int onTapFunction() {
-  print('Sanjay');
-}
-
 class Home extends StatelessWidget {
   var _currentIndex = 0;
 
@@ -48,7 +44,11 @@ class Home extends StatelessWidget {
             backgroundColor: Colors.blueGrey,
           ),
         ],
-        onTap: onTapFunction(),
+        onTap: (int index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
       ),
     );
   }
